@@ -1,4 +1,3 @@
-package hdt8;
 public interface PriorityQueue<E extends Comparable<E>>
 {
 	public E getFirst();
