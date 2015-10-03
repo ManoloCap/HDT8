@@ -5,17 +5,21 @@
  */
 package hdt8;
 
-public class paciente {
+public class paciente implements Comparable<paciente>{
     
     private String nombre;
     private String descripcion;
     private String nivel;
     
-    public paciente(){
-        
-        nombre = "";
-        descripcion = "";
-        nivel = "E";
+    public paciente(String nombre, String descripcion, String nivel){
+        super();
+	this.nombre = nombre;
+	this.descripcion = descripcion;
+	this.nivel = nivel;
+    }
+    public int compareTo(paciente otroPaciente) {
+	// TODO Auto-generated method stub
+	return nivel.compareTo(otroPaciente.getNivel());
     }
 
     /**

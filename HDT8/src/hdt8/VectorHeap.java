@@ -52,7 +52,14 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>{
 		}
 		data.set(leaf,value);
 	}
-	
+	@Override
+	public void add(E value) {
+		//pre: value is non-null comparable
+		//post: value is added to priority queue
+		data.add(value);
+		percolateUp(data.size()-1);
+	}
+        
 	protected void pushDownRoot(int root){
 		//pre: 0<=root<size
 		//post: moves node at index root down to appropiate position in subtree
@@ -99,13 +106,6 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>{
 		return minVal;
 	}
 
-	@Override
-	public void add(E value) {
-		//pre: value is non-null comparable
-		//post: value is added to priority queue
-		data.add(value);
-		percolateUp(data.size()-1);
-	}
 
 	@Override
 	public boolean isEmpty() {
